@@ -8,7 +8,6 @@ before_install:
 
 script:
   - docker run -e CI=true erika/react-test npm test
-#  - docker run erika/react-test npm test -- --coverage
 
 after_sucess:
   - docker build -t erika/multi-client ./client
