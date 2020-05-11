@@ -10,10 +10,10 @@ script:
   - docker run -e CI=true erika/react-test npm test
 
 after_sucess:
-  - docker build -t erika/multi-client ./client
-  - docker build -t erika/multi-nginx ./nginx
-  - docker build -t erika/multi-server ./server
-  - docker build -t erika/multi-worker ./worker
+  - docker build -t fridunnsunday/multi-client ./client
+  - docker build -t fridunnsunday/multi-nginx ./nginx
+  - docker build -t fridunnsunday/multi-server ./server
+  - docker build -t fridunnsunday/multi-worker ./worker
   # log in to the docker CLI 
   - echo "$DOCKER_PASSWORD"| docker login -u "$DOCKER_ID" --password-stdin
   # Take those images and push them to docker hub
